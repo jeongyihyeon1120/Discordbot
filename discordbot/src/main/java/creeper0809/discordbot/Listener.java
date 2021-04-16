@@ -11,7 +11,7 @@ public class Listener extends ListenerAdapter {
 	// .submit() 더 이상 필요하지 않은 경우 실행을 취소해야 하는 경우
 	CommandManager Cmanager = new CommandManager();
 	@Override
-	public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
+	public void onMessageReceived(MessageReceivedEvent e) {
 		if(e.getMessage().getContentRaw().equalsIgnoreCase(Config.get("prefix")+"shutdown") 
 				&& e.getAuthor().getId().equals(Config.get("ownerid"))) {
 			BotCommons.shutdown(e.getJDA());
